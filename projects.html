@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Archives</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1> Project Archives</h1>
+    <a href="index.html">⬅ Back to Library</a>
+  </header>
+
+  <section class="shelf">
+    <div class="book" onclick="openBook('p1')"><span>Proj 1</span></div>
+    <div class="book" onclick="openBook('p2')"><span>Proj 2</span></div>
+    <div class="book" onclick="openBook('p3')"><span>Proj 3</span></div>
+  </section>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeBook()">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
