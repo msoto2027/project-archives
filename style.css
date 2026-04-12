@@ -299,6 +299,34 @@ header {
   background: linear-gradient(135deg, #a0522d 0%, #cd853f 25%, #a0522d 50%, #704214 75%, #5c3317 100%);
 }
 
+/* Spacer books - hidden by default, show on larger screens */
+.spacer-book {
+  display: none;
+  cursor: default;
+}
+
+.spacer-book:hover {
+  transform: none;
+  box-shadow: inset -4px 0 8px rgba(0,0,0,0.5), inset 0 0 3px rgba(139,69,19,0.3), 3px 8px 15px rgba(0,0,0,0.7);
+  filter: none;
+}
+
+@media (min-width: 768px) {
+  .spacer-book {
+    display: flex;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bookshelf {
+    max-width: 1200px;
+  }
+  
+  .shelf {
+    gap: 15px;
+  }
+}
+
 /* Leaning book effect */
 .lean-book {
   transform: rotateZ(8deg) translateY(10px);
