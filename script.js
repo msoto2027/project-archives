@@ -13,6 +13,7 @@ function closeMenu() {
 document.addEventListener("DOMContentLoaded", function() {
   const hamburger = document.querySelector(".hamburger-container");
   const menuLinks = document.querySelectorAll(".side-menu a");
+  const closeBtn = document.getElementById("close-menu-btn");
   
   if (hamburger) {
     hamburger.addEventListener("click", toggleMenu);
@@ -21,6 +22,10 @@ document.addEventListener("DOMContentLoaded", function() {
   menuLinks.forEach(link => {
     link.addEventListener("click", closeMenu);
   });
+  
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeMenu);
+  }
 });
 
 function openBook(project) {

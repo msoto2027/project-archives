@@ -74,6 +74,22 @@ header {
   transform: translateX(-10px);
 }
 
+.close-menu {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: #f4f4f4;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: 0.2s;
+}
+
+.close-menu:hover {
+  transform: scale(1.2);
+}
+
 .bookshelf {
   padding: 40px;
 }
@@ -163,4 +179,25 @@ header {
   max-width: 700px;
   margin: auto;
   text-align: left;
+}
+
+.homepage-tutorial {
+  background: #5a3e2b;
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 700px;
+  border-radius: 10px;
+  border: 2px solid #8b5a2b;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+.homepage-tutorial ul {
+  margin: 20px 0;
+  padding-left: 25px;
+  line-height: 1.8;
+}
+
+.homepage-tutorial li {
+  margin: 8px 0;
 }
