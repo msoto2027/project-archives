@@ -33,9 +33,12 @@ function openBook(project) {
   const content = document.getElementById("modal-body");
 
   let data = {
-    project1: "<h2>Project 1</h2><p>Description of project 1.</p>",
-    project2: "<h2>Project 2</h2><p>Description of project 2.</p>",
-    project3: "<h2>Project 3</h2><p>Description of project 3.</p>"
+    p1: "<h2>Project 1</h2><p>Description of project 1.</p>",
+    p2: "<h2>Project 2</h2><p>Description of project 2.</p>",
+    p3: "<h2>Project 3</h2><p>Description of project 3.</p>",
+    p4: "<h2>Project 4</h2><p>Description of project 4.</p>",
+    p5: "<h2>Project 5</h2><p>Description of project 5.</p>",
+    p6: "<h2>Project 6</h2><p>Description of project 6.</p>"
   };
 
   content.innerHTML = data[project];

@@ -1,7 +1,22 @@
 body {
   margin: 0;
   font-family: 'Georgia', serif;
-  background: #2c2c2c;
+  background: #1a1410;
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,.03) 2px,
+      rgba(0,0,0,.03) 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,.05) 2px,
+      rgba(0,0,0,.05) 4px
+    );
   color: #f4f4f4;
   text-align: center;
 }
@@ -91,42 +106,209 @@ header {
 }
 
 .bookshelf {
-  padding: 40px;
+  padding: 30px 20px;
+  background: linear-gradient(90deg, #3d2817 0%, #5a3e2b 15%, #6b4423 30%, #5a3e2b 50%, #6b4423 70%, #5a3e2b 85%, #3d2817 100%);
+  background-size: 200% 100%;
+  background-image: 
+    linear-gradient(90deg, #3d2817 0%, #5a3e2b 15%, #6b4423 30%, #5a3e2b 50%, #6b4423 70%, #5a3e2b 85%, #3d2817 100%),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,.1) 2px,
+      rgba(0,0,0,.1) 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      rgba(139,69,19,.05) 1px,
+      rgba(139,69,19,.05) 2px
+    );
+  border-radius: 15px;
+  margin: 40px auto;
+  max-width: 950px;
+  box-shadow: 
+    inset 0 0 40px rgba(0,0,0,0.8),
+    inset 2px 0 15px rgba(0,0,0,0.5),
+    inset -2px 0 15px rgba(0,0,0,0.5),
+    inset 0 2px 10px rgba(255,255,255,0.1),
+    0 20px 50px rgba(0,0,0,0.8),
+    0 0 50px rgba(0,0,0,0.5);
+  border: 10px solid #2d1f12;
+  position: relative;
+}
+
+.bookshelf::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(135deg, #1a0f07 0%, #2d1f12 25%, #3d2817 50%, #2d1f12 75%, #1a0f07 100%);
+  z-index: -1;
+  border-radius: 15px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.9), inset 0 0 30px rgba(0,0,0,0.4);
+}
+
+.bookshelf::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(90deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 5%, transparent 10%, transparent 90%, rgba(0,0,0,0.1) 95%, rgba(0,0,0,0.4) 100%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 20px,
+      rgba(0,0,0,.02) 20px,
+      rgba(0,0,0,.02) 40px
+    );
+  pointer-events: none;
+  border-radius: 15px;
 }
 
 .shelf {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 15px;
-  margin-top: 30px;
-  padding: 20px;
-  background: #5a3e2b;
-  border-radius: 10px;
+  gap: 12px;
+  margin: 35px 20px;
+  padding: 50px 20px 20px 20px;
+  background: linear-gradient(to right, #4a3220 0%, #6b4423 20%, #7a5033 50%, #6b4423 80%, #4a3220 100%);
+  background-image: 
+    linear-gradient(to right, #4a3220 0%, #6b4423 20%, #7a5033 50%, #6b4423 80%, #4a3220 100%),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 3px,
+      rgba(0,0,0,.08) 3px,
+      rgba(0,0,0,.08) 6px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(139,69,19,.03) 2px,
+      rgba(139,69,19,.03) 4px
+    );
+  border-radius: 8px;
+  perspective: 1200px;
+  position: relative;
+  box-shadow: 
+    inset 0 2px 10px rgba(255,255,255,0.2),
+    inset 0 -4px 10px rgba(0,0,0,0.6),
+    0 8px 20px rgba(0,0,0,0.6);
+  border-bottom: 5px solid #2d1f12;
+}
+
+.shelf::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  right: 20px;
+  height: 4px;
+  background: linear-gradient(to right, rgba(255,255,255,0.3), rgba(255,255,255,0.15), rgba(255,255,255,0.3));
+  border-radius: 2px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.shelf::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.5));
+  border-radius: 0 0 8px 8px;
 }
 
 /* Book styling */
 .book {
-  width: 60px;
-  height: 180px;
-  background: linear-gradient(to right, #8b0000, #a52a2a);
-  border-radius: 4px;
+  width: 65px;
+  height: 280px;
+  background: linear-gradient(135deg, #8b4513 0%, #a0522d 25%, #8b4513 50%, #704214 75%, #5c3317 100%);
+  border-radius: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  box-shadow: inset -4px 0 8px rgba(0,0,0,0.5), inset 0 0 3px rgba(139,69,19,0.3), 3px 8px 15px rgba(0,0,0,0.7);
+  border: 1px solid rgba(0,0,0,0.4);
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.book::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.3), transparent);
+  border-radius: 2px 0 0 2px;
+  box-shadow: inset 1px 0 2px rgba(255,255,255,0.1);
 }
 
 .book span {
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #f4f4f4;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  z-index: 2;
 }
 
 .book:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+  transform: translateY(-20px) rotateZ(-5deg) rotateX(5deg);
+  box-shadow: inset -4px 0 8px rgba(0,0,0,0.5), inset 0 0 3px rgba(139,69,19,0.3), 8px 25px 40px rgba(0,0,0,0.9);
+  filter: brightness(1.2);
+}
+
+/* Unique book colors */
+.book-burgundy {
+  background: linear-gradient(135deg, #8b0000 0%, #c41e3a 25%, #8b0000 50%, #6b0000 75%, #4a0000 100%);
+}
+
+.book-navy {
+  background: linear-gradient(135deg, #001a4d 0%, #003399 25%, #001a4d 50%, #000d26 75%, #001a4d 100%);
+}
+
+.book-forest {
+  background: linear-gradient(135deg, #1b4d2f 0%, #2d7a52 25%, #1b4d2f 50%, #0f3620 75%, #0a2411 100%);
+}
+
+.book-gold {
+  background: linear-gradient(135deg, #b8860b 0%, #daa520 25%, #b8860b 50%, #8b6914 75%, #5c4609 100%);
+}
+
+.book-purple {
+  background: linear-gradient(135deg, #4b0082 0%, #663399 25%, #4b0082 50%, #330066 75%, #1a004d 100%);
+}
+
+.book-copper {
+  background: linear-gradient(135deg, #a0522d 0%, #cd853f 25%, #a0522d 50%, #704214 75%, #5c3317 100%);
+}
+
+/* Leaning book effect */
+.lean-book {
+  transform: rotateZ(8deg) translateY(10px);
+  transform-origin: bottom right;
+}
+
+.lean-book:hover {
+  transform: rotateZ(8deg) translateY(-10px) rotateX(5deg);
+  box-shadow: inset -3px 0 5px rgba(0,0,0,0.4), 8px 20px 35px rgba(0,0,0,0.8);
+  filter: brightness(1.15);
 }
 
 /* Modal */
