@@ -54,8 +54,7 @@ header {
   box-shadow: -5px 0 15px rgba(0,0,0,0.5);
 }
 
-.hamburger-container:hover + .side-menu,
-.side-menu:hover {
+.side-menu.active {
   transform: translateX(0);
 }
 
