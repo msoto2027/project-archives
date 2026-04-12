@@ -319,11 +319,21 @@ header {
 
 @media (min-width: 1024px) {
   .bookshelf {
-    max-width: 1200px;
+    max-width: 1400px;
   }
   
   .shelf {
-    gap: 15px;
+    gap: 12px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .bookshelf {
+    max-width: 1600px;
+  }
+  
+  .shelf {
+    gap: 10px;
   }
 }
 
