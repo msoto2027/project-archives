@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
+
 body {
   margin: 0;
   font-family: 'Georgia', serif;
@@ -26,6 +28,56 @@ header {
   background: #0d0f1a;
   position: relative;
   border-bottom: 2px solid #d4af37;
+}
+
+/* Back Button */
+.back-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #d4af37 0%, #f5d76e 50%, #d4af37 100%);
+  color: #0d0f1a;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+  border: 2px solid #d4af37;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.back-button:hover {
+  background: linear-gradient(135deg, #f5d76e 0%, #ffd700 50%, #f5d76e 100%);
+  transform: translateX(-5px);
+  box-shadow: 0 6px 16px rgba(212, 175, 55, 0.6);
+}
+
+/* Gothic Heading Styles */
+h1, h2, h3 {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h1 {
+  color: #d4af37;
+  font-size: 2.8em;
+  font-weight: 700;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+  margin: 20px 0;
+}
+
+h2 {
+  color: #d4af37;
+  font-size: 2.2em;
+  font-weight: 600;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+h3 {
+  color: #e8dcc0;
+  font-size: 1.6em;
+  font-weight: 600;
 }
 
 /* Hamburger Menu */
@@ -419,10 +471,13 @@ header {
 }
 
 .intro-content h2 {
+  font-family: 'Cinzel', serif;
   color: #d4af37;
   font-size: 2.2em;
   margin-bottom: 20px;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  letter-spacing: 2px;
+}
 }
 
 .intro-content p {
