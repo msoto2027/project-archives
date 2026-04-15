@@ -54,10 +54,14 @@
           <input id="inquiry-question" name="inquiryType" type="checkbox" value="Question">
           Question
         </label>
+        <label class="checkbox-label" for="inquiry-other">
+          <input id="inquiry-other" name="inquiryType" type="checkbox" value="Other">
+          Other
+        </label>
       </fieldset>
 
       <label for="contact-message">Message <span class="required-asterisk">*</span></label>
-      <textarea id="contact-message" name="message" rows="6" required></textarea>
+      <textarea id="contact-message" name="message" rows="6" placeholder="Please provide any additional contact information and a brief description of your inquiry." required></textarea>
 
       <button type="submit">Submit Entry</button>
       <p id="form-status" class="form-status"></p>
