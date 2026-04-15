@@ -524,6 +524,13 @@ h3 {
   letter-spacing: 1px;
 }
 
+.response-note {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #b7aacd;
+  font-style: italic;
+}
+
 /* Photo Gallery */
 .photo-gallery {
   display: flex;
