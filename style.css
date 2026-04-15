@@ -3,31 +3,57 @@
 body {
   margin: 0;
   font-family: 'Georgia', serif;
-  background: #0f0a18;
-  background-image: 
+  /* Warm dark base instead of cool purple — aged parchment in darkness */
+  background: #0e0b08;
+  background-image:
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 2px,
-      rgba(146,124,179,.02) 2px,
-      rgba(146,124,179,.02) 4px
+      rgba(80,55,18,.028) 2px,
+      rgba(80,55,18,.028) 4px
     ),
     repeating-linear-gradient(
       0deg,
       transparent,
       transparent 2px,
-      rgba(146,124,179,.03) 2px,
-      rgba(146,124,179,.03) 4px
+      rgba(70,48,14,.032) 2px,
+      rgba(70,48,14,.032) 4px
+    ),
+    repeating-linear-gradient(
+      47deg,
+      transparent,
+      transparent 4px,
+      rgba(50,32,8,.012) 4px,
+      rgba(50,32,8,.012) 5px
     );
-  color: #e7e0f1;
+  color: #c8c0d2;
   text-align: center;
+}
+
+/* Dust & age overlay — vignette + faint warm grain film */
+#dust-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 998;
+  background:
+    radial-gradient(ellipse at 50% 42%, transparent 28%, rgba(5,2,1,0.62) 100%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(22,12,3,0.016) 3px,
+      rgba(22,12,3,0.016) 4px
+    );
 }
 
 header {
   padding: 20px;
-  background: #140e23;
+  background: #100d18;
   position: relative;
-  border-bottom: 2px solid #d4af37;
+  border-bottom: 2px solid #9e7e22;
+  filter: sepia(0.14) saturate(0.8) brightness(0.92);
 }
 
 /* Back Button */
@@ -111,7 +137,7 @@ h3 {
   right: 0;
   width: 250px;
   height: 100vh;
-  background: #171125;
+  background: #120f1c;
   display: flex;
   flex-direction: column;
   padding: 80px 20px 20px 20px;
@@ -120,6 +146,7 @@ h3 {
   transition: transform 0.3s ease-out;
   z-index: 999;
   box-shadow: -5px 0 15px rgba(0,0,0,0.8);
+  filter: sepia(0.12) saturate(0.8);
 }
 
 .side-menu.active {
@@ -192,6 +219,7 @@ h3 {
     0 0 50px rgba(0,0,0,0.5);
   border: 10px solid #2d1f12;
   position: relative;
+  filter: sepia(0.18) saturate(0.72) brightness(0.88);
 }
 
 .bookshelf::before {
@@ -301,6 +329,7 @@ h3 {
   border: 1px solid rgba(0,0,0,0.4);
   position: relative;
   transform-style: preserve-3d;
+  filter: saturate(0.72) sepia(0.22) brightness(0.84);
 }
 
 .book::before {
@@ -326,7 +355,7 @@ h3 {
 .book:hover {
   transform: translateY(-20px) rotateZ(-5deg) rotateX(5deg);
   box-shadow: inset -4px 0 8px rgba(0,0,0,0.5), inset 0 0 3px rgba(139,69,19,0.3), 8px 25px 40px rgba(0,0,0,0.9);
-  filter: brightness(1.2);
+  filter: saturate(0.85) sepia(0.1) brightness(1.15);
 }
 
 /* Unique book colors */
@@ -401,7 +430,7 @@ h3 {
 .lean-book:hover {
   transform: rotateZ(8deg) translateY(-10px) rotateX(5deg);
   box-shadow: inset -3px 0 5px rgba(0,0,0,0.4), 8px 20px 35px rgba(0,0,0,0.8);
-  filter: brightness(1.15);
+  filter: saturate(0.85) sepia(0.1) brightness(1.1);
 }
 
 /* Modal */
@@ -460,15 +489,16 @@ h3 {
 }
 
 .portfolio-intro {
-  background: linear-gradient(135deg, #211831 0%, #2c2042 50%, #211831 100%);
-  border: 3px solid #d4af37;
+  background: linear-gradient(135deg, #1c1526 0%, #261c38 50%, #1c1526 100%);
+  border: 3px solid #8e7220;
   border-radius: 15px;
   padding: 30px;
   margin: 30px auto;
   max-width: 800px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.6), inset 0 0 20px rgba(120, 94, 150, 0.12);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6), inset 0 0 20px rgba(80, 58, 20, 0.1);
   text-align: center;
   position: relative;
+  filter: sepia(0.1) saturate(0.82);
 }
 
 .intro-content h2 {
@@ -483,18 +513,18 @@ h3 {
 .intro-content p {
   font-size: 1.1em;
   line-height: 1.6;
-  color: #e5ddef;
+  color: #c4bace;
   margin: 15px 0;
 }
 
 .intro-tip {
-  background: #171125;
+  background: #110e1a;
   padding: 15px;
   border-radius: 10px;
-  border-left: 4px solid #d4af37;
+  border-left: 4px solid #8e7220;
   margin-top: 20px;
   font-style: italic;
-  color: #c7b7e2;
+  color: #a8999e;
 }
 
 .homepage-tutorial {

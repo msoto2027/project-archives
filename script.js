@@ -1,3 +1,10 @@
+// Dust & age overlay
+function injectDustOverlay() {
+  const el = document.createElement('div');
+  el.id = 'dust-overlay';
+  document.body.appendChild(el);
+}
+
 // Hamburger menu toggle
 function toggleMenu() {
   const sideMenu = document.getElementById("side-menu");
@@ -11,6 +18,8 @@ function closeMenu() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+  injectDustOverlay();
+
   const hamburger = document.querySelector(".hamburger-container");
   const menuLinks = document.querySelectorAll(".side-menu a");
   const closeBtn = document.getElementById("close-menu-btn");
