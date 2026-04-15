@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function() {
   const hamburger = document.querySelector(".hamburger-container");
   const menuLinks = document.querySelectorAll(".side-menu a");
   const closeBtn = document.getElementById("close-menu-btn");
+  const contactForm = document.getElementById("contact-form");
+  const formStatus = document.getElementById("form-status");
   
   if (hamburger) {
     hamburger.addEventListener("click", toggleMenu);
@@ -25,6 +27,29 @@ document.addEventListener("DOMContentLoaded", function() {
   
   if (closeBtn) {
     closeBtn.addEventListener("click", closeMenu);
+  }
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("contact-name").value.trim();
+      const message = document.getElementById("contact-message").value.trim();
+      const inquiryType = Array.from(document.querySelectorAll('input[name="inquiryType"]:checked'))
+        .map((item) => item.value)
+        .join(", ");
+      const inquiryLine = inquiryType || "Not specified";
+
+      const subject = `Portfolio Contact Form - ${name}`;
+      const body = `Name: ${name}\nInquiry Type: ${inquiryLine}\n\nMessage:\n${message}`;
+      const mailtoUrl = `mailto:marisol.soto@ttu.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      window.location.href = mailtoUrl;
+
+      if (formStatus) {
+        formStatus.textContent = "Your email app should open with this message ready to send.";
+      }
+    });
   }
 });
 
