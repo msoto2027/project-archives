@@ -3,29 +3,29 @@
 body {
   margin: 0;
   font-family: 'Georgia', serif;
-  background: #0f1420;
+  background: #0f0a18;
   background-image: 
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 2px,
-      rgba(218,165,32,.02) 2px,
-      rgba(218,165,32,.02) 4px
+      rgba(146,124,179,.02) 2px,
+      rgba(146,124,179,.02) 4px
     ),
     repeating-linear-gradient(
       0deg,
       transparent,
       transparent 2px,
-      rgba(218,165,32,.03) 2px,
-      rgba(218,165,32,.03) 4px
+      rgba(146,124,179,.03) 2px,
+      rgba(146,124,179,.03) 4px
     );
-  color: #e8dcc0;
+  color: #e7e0f1;
   text-align: center;
 }
 
 header {
   padding: 20px;
-  background: #0d0f1a;
+  background: #140e23;
   position: relative;
   border-bottom: 2px solid #d4af37;
 }
@@ -34,22 +34,22 @@ header {
 .back-button {
   display: inline-block;
   padding: 10px 20px;
-  background: linear-gradient(135deg, #d4af37 0%, #f5d76e 50%, #d4af37 100%);
-  color: #0d0f1a;
+  background: linear-gradient(135deg, #3f2c59 0%, #533975 50%, #3f2c59 100%);
+  color: #f8f3ff;
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
   transition: 0.3s ease;
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 4px 12px rgba(63, 44, 89, 0.5);
   border: 2px solid #d4af37;
   cursor: pointer;
   font-size: 1em;
 }
 
 .back-button:hover {
-  background: linear-gradient(135deg, #f5d76e 0%, #ffd700 50%, #f5d76e 100%);
+  background: linear-gradient(135deg, #4b3568 0%, #624585 50%, #4b3568 100%);
   transform: translateX(-5px);
-  box-shadow: 0 6px 16px rgba(212, 175, 55, 0.6);
+  box-shadow: 0 6px 16px rgba(75, 53, 104, 0.6);
 }
 
 /* Gothic Heading Styles */
@@ -75,7 +75,7 @@ h2 {
 }
 
 h3 {
-  color: #e8dcc0;
+  color: #d4af37;
   font-size: 1.6em;
   font-weight: 600;
 }
@@ -111,7 +111,7 @@ h3 {
   right: 0;
   width: 250px;
   height: 100vh;
-  background: #0d0f1a;
+  background: #171125;
   display: flex;
   flex-direction: column;
   padding: 80px 20px 20px 20px;
@@ -129,9 +129,9 @@ h3 {
 .side-menu a {
   display: block;
   padding: 15px 20px;
-  color: #e8dcc0;
+  color: #e9e2f3;
   text-decoration: none;
-  background: #1a2744;
+  background: #241a36;
   border-radius: 5px;
   transition: 0.2s;
   text-align: left;
@@ -139,9 +139,9 @@ h3 {
 }
 
 .side-menu a:hover {
-  background: #2d3e54;
+  background: #312247;
   transform: translateX(-10px);
-  box-shadow: inset -3px 0 5px rgba(212,175,55,0.3);
+  box-shadow: inset -3px 0 5px rgba(120, 94, 150, 0.35);
 }
 
 .close-menu {
@@ -416,12 +416,13 @@ h3 {
 }
 
 .modal-content {
-  background: #fff;
-  color: #000;
+  background: #1c152c;
+  color: #ece4f7;
   margin: 10% auto;
   padding: 20px;
   width: 60%;
   border-radius: 10px;
+  border: 1px solid #d4af37;
 }
 
 .close {
@@ -438,8 +439,8 @@ h3 {
   display: inline-block;
   margin: 15px;
   padding: 15px 25px;
-  background: #1a2744;
-  color: #e8dcc0;
+  background: #241a36;
+  color: #e9e2f3;
   text-decoration: none;
   border-radius: 8px;
   transition: 0.2s;
@@ -447,8 +448,8 @@ h3 {
 }
 
 .nav a:hover {
-  background: #2d3e54;
-  box-shadow: 0 0 10px rgba(212,175,55,0.5);
+  background: #312247;
+  box-shadow: 0 0 10px rgba(120, 94, 150, 0.45);
 }
 
 .page {
@@ -459,13 +460,13 @@ h3 {
 }
 
 .portfolio-intro {
-  background: linear-gradient(135deg, #1a2744 0%, #2a3f5f 50%, #1a2744 100%);
+  background: linear-gradient(135deg, #211831 0%, #2c2042 50%, #211831 100%);
   border: 3px solid #d4af37;
   border-radius: 15px;
   padding: 30px;
   margin: 30px auto;
   max-width: 800px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.6), inset 0 0 20px rgba(212,175,55,0.1);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6), inset 0 0 20px rgba(120, 94, 150, 0.12);
   text-align: center;
   position: relative;
 }
@@ -478,27 +479,26 @@ h3 {
   text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
   letter-spacing: 2px;
 }
-}
 
 .intro-content p {
   font-size: 1.1em;
   line-height: 1.6;
-  color: #e8dcc0;
+  color: #e5ddef;
   margin: 15px 0;
 }
 
 .intro-tip {
-  background: #0d0f1a;
+  background: #171125;
   padding: 15px;
   border-radius: 10px;
   border-left: 4px solid #d4af37;
   margin-top: 20px;
   font-style: italic;
-  color: #d4af37;
+  color: #c7b7e2;
 }
 
 .homepage-tutorial {
-  background: #1a2744;
+  background: #241a36;
   padding: 30px;
   margin: 40px auto;
   max-width: 700px;
