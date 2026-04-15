@@ -518,6 +518,12 @@ h3 {
   margin: 8px 0;
 }
 
+.page h3 {
+  color: #d7beff;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
 /* Photo Gallery */
 .photo-gallery {
   display: flex;
