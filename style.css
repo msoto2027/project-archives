@@ -447,16 +447,21 @@ h3 {
 
 .modal-content {
   background:
-    linear-gradient(90deg, rgba(120,88,44,0.18) 49.7%, rgba(48,30,13,0.55) 50%, rgba(120,88,44,0.18) 50.3%),
+    linear-gradient(90deg, rgba(120,88,44,0.06) 47%, rgba(82,56,27,0.16) 49.4%, rgba(82,56,27,0.16) 50.6%, rgba(120,88,44,0.06) 53%),
+    radial-gradient(120% 110% at 25% 0%, rgba(255,255,255,0.24) 0%, rgba(255,255,255,0) 58%),
+    radial-gradient(120% 110% at 75% 0%, rgba(255,255,255,0.24) 0%, rgba(255,255,255,0) 58%),
     linear-gradient(180deg, #f2e4c6 0%, #e9d7b1 55%, #deca9f 100%);
   color: #3a2611;
   margin: 5vh auto;
   padding: 28px 36px;
   width: 60%;
+  max-width: 980px;
   max-height: 85vh;
   overflow-y: auto;
-  border-radius: 14px;
+  border-radius: 28px 28px 20px 20px / 18px 18px 30px 30px;
   border: 1px solid #8d6a35;
+  border-left-color: #b48f58;
+  border-right-color: #6f5027;
   box-shadow:
     inset 0 0 0 1px rgba(255,255,255,0.25),
     inset 0 10px 24px rgba(255,255,255,0.2),
@@ -464,6 +469,8 @@ h3 {
     0 28px 60px rgba(0,0,0,0.72);
   position: relative;
   text-align: left;
+  transform: perspective(1200px) rotateX(1deg);
+  transform-origin: center top;
 }
 
 .modal-content::before,
