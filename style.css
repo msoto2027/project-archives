@@ -369,6 +369,22 @@ h3 {
   z-index: 2;
 }
 
+.restricted-book {
+  overflow: hidden;
+}
+
+.restricted-book span {
+  letter-spacing: 0.06em;
+}
+
+.restricted-book::after {
+  content: none;
+}
+
+.restricted-book::before {
+  content: none;
+}
+
 .book:hover {
   transform: translateY(-20px) rotateZ(-5deg) rotateX(5deg);
   box-shadow: inset -4px 0 8px rgba(0,0,0,0.5), inset 0 0 3px rgba(139,69,19,0.3), 8px 25px 40px rgba(0,0,0,0.9);
@@ -520,6 +536,12 @@ body.modal-open {
   transition: transform 0.8s cubic-bezier(0.2, 0.78, 0.18, 1), box-shadow 0.8s ease;
   z-index: 2;
   overflow: hidden;
+}
+
+.archive-cover-restricted .archive-cover-title,
+.archive-cover-restricted .archive-cover-meta,
+.archive-cover-restricted .archive-kicker {
+  padding-left: 0;
 }
 
 .archive-cover::before {

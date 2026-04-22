@@ -34,15 +34,16 @@ const projectDetails = {
     `
   },
   p2: {
-    coverTitle: "Coming Soon",
-    coverMeta: "Reserved shelf space for a future project archive.",
+    coverTitle: "Restricted Mode",
+    coverMeta: "This archive is sealed until the next project is cleared for release.",
+    isRestricted: true,
     leftPage: `
-      <h2>Project In Progress</h2>
-      <p>This volume is still being cataloged. A future archive entry will live here once the next project reaches a shareable stage.</p>
+      <h2>Access Restricted</h2>
+      <p>This volume is sealed while the next project is still being cataloged. The archive will open once the work is ready to be released.</p>
     `,
     rightPage: `
-      <h3>What Will Go Here</h3>
-      <p>Expect a full project summary, design goals, tools used, and a direct link once the work is ready to be published.</p>
+      <h3>Release Conditions</h3>
+      <p>Once approval is granted, this entry will be updated with the project summary, design goals, tools used, and a direct link to the finished work.</p>
     `
   },
   p3: {
@@ -73,15 +74,16 @@ const projectDetails = {
     `
   },
   p5: {
-    coverTitle: "Coming Soon",
-    coverMeta: "Reserved shelf space for a future project archive.",
+    coverTitle: "Restricted Mode",
+    coverMeta: "This archive remains under lock until its contents are ready to be published.",
+    isRestricted: true,
     leftPage: `
-      <h2>Project In Progress</h2>
-      <p>This section is being held for another upcoming archive entry.</p>
+      <h2>Access Restricted</h2>
+      <p>This section is being held behind restriction for another upcoming archive entry.</p>
     `,
     rightPage: `
-      <h3>What Will Go Here</h3>
-      <p>Once the next project is ready, this book will open to a summary, screenshots, and links to the finished work.</p>
+      <h3>Release Conditions</h3>
+      <p>When the next project is ready, this book will open to a summary, screenshots, and links to the finished work.</p>
     `
   },
   p6: {
@@ -102,9 +104,11 @@ const projectDetails = {
 let closeBookTimer;
 
 function createBookMarkup(book) {
+  const coverClasses = book.isRestricted ? "archive-cover archive-cover-restricted" : "archive-cover";
+
   return `
     <div class="archive-book">
-      <section class="archive-cover" aria-hidden="true">
+      <section class="${coverClasses}" aria-hidden="true">
         <p class="archive-kicker">Project Archive</p>
         <h2 class="archive-cover-title">${book.coverTitle}</h2>
         <p class="archive-cover-meta">${book.coverMeta}</p>
