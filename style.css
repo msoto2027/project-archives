@@ -772,7 +772,6 @@ body.modal-open {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   background:
-    linear-gradient(90deg, rgba(120,88,44,0.08) 47%, rgba(82,56,27,0.2) 49.4%, rgba(82,56,27,0.2) 50.6%, rgba(120,88,44,0.08) 53%),
     radial-gradient(120% 110% at 25% 0%, rgba(255,255,255,0.24) 0%, rgba(255,255,255,0) 58%),
     radial-gradient(120% 110% at 75% 0%, rgba(255,255,255,0.24) 0%, rgba(255,255,255,0) 58%),
     linear-gradient(180deg, #f5e9cb 0%, #ebdbb7 56%, #e1cfaa 100%);
