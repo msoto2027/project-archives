@@ -47,27 +47,70 @@ body {
   overflow-x: hidden;
 }
 
-.theme-toggle {
-  position: fixed;
+.theme-control {
+  position: absolute;
   left: 16px;
-  top: 16px;
+  top: 18px;
   z-index: 1001;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
   border: 1px solid #d4af37;
-  border-radius: 999px;
+  border-radius: 12px;
+  background: rgba(12, 8, 18, 0.88);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+}
+
+.theme-control-label {
+  color: #f4dfaa;
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.theme-control-select {
+  border: 1px solid #d4af37;
+  border-radius: 8px;
   background: linear-gradient(180deg, #1d1728 0%, #0f0b17 100%);
   color: #f4dfaa;
   font-family: 'Cinzel', serif;
-  font-size: 0.78rem;
-  letter-spacing: 0.07rem;
-  padding: 10px 14px;
+  font-size: 0.68rem;
+  letter-spacing: 0.05rem;
+  padding: 7px 26px 7px 9px;
+  min-width: 132px;
   cursor: pointer;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.28);
   transition: transform 0.2s ease, background 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image:
+    linear-gradient(180deg, #1d1728 0%, #0f0b17 100%),
+    linear-gradient(45deg, transparent 50%, #f4dfaa 50%),
+    linear-gradient(135deg, #f4dfaa 50%, transparent 50%);
+  background-repeat: no-repeat;
+  background-position:
+    0 0,
+    calc(100% - 18px) 52%,
+    calc(100% - 12px) 52%;
+  background-size:
+    100% 100%,
+    6px 6px,
+    6px 6px;
 }
 
-.theme-toggle:hover {
+.theme-control-select:hover {
   transform: translateY(-1px);
   background: linear-gradient(180deg, #2a213a 0%, #171022 100%);
+}
+
+.theme-control-select:focus-visible {
+  outline: 2px solid #d4af37;
+  outline-offset: 2px;
 }
 
 body.industrial-mode {
@@ -201,10 +244,23 @@ body.industrial-mode .close {
   color: #f3f7fa;
 }
 
-body.industrial-mode .theme-toggle {
+body.industrial-mode .theme-control-label {
+  color: #2b3b44;
+}
+
+body.industrial-mode .theme-control {
+  background: rgba(225, 232, 237, 0.9);
+  border-color: #6a7d89;
+}
+
+body.industrial-mode .theme-control-select {
   background: linear-gradient(180deg, #dde6eb 0%, #cbd5dc 100%);
   border-color: #5f727f;
   color: #25343c;
+  background-image:
+    linear-gradient(180deg, #dde6eb 0%, #cbd5dc 100%),
+    linear-gradient(45deg, transparent 50%, #2f424d 50%),
+    linear-gradient(135deg, #2f424d 50%, transparent 50%);
 }
 
 /* Dust & age overlay — vignette + faint warm grain film */
@@ -1222,11 +1278,22 @@ body.modal-open {
 }
 
 @media (max-width: 640px) {
-  .theme-toggle {
+  .theme-control {
     left: 12px;
-    top: 12px;
-    font-size: 0.72rem;
-    padding: 9px 12px;
+    top: 14px;
+    gap: 8px;
+    padding: 7px 8px;
+  }
+
+  .theme-control-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.06rem;
+  }
+
+  .theme-control-select {
+    font-size: 0.64rem;
+    min-width: 118px;
+    padding: 6px 23px 6px 8px;
   }
 
   header {
@@ -1241,6 +1308,7 @@ body.modal-open {
   h1 {
     font-size: 2rem;
     line-height: 1.2;
+    margin-top: 56px;
     padding-right: 52px;
   }
 

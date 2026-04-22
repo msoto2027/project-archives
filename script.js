@@ -23,10 +23,9 @@ function setThemeMode(mode) {
   const isIndustrial = mode === "industrial";
   document.body.classList.toggle("industrial-mode", isIndustrial);
 
-  const toggleBtn = document.getElementById("theme-toggle-btn");
-  if (toggleBtn) {
-    toggleBtn.textContent = isIndustrial ? "Classic Archive" : "Industrial Light";
-    toggleBtn.setAttribute("aria-pressed", String(isIndustrial));
+  const modeSelect = document.getElementById("viewing-protocol-select");
+  if (modeSelect) {
+    modeSelect.value = isIndustrial ? "industrial" : "classic";
   }
 }
 
@@ -34,24 +33,38 @@ function initThemeToggle() {
   const savedMode = window.localStorage.getItem(THEME_KEY);
   setThemeMode(savedMode === "industrial" ? "industrial" : "classic");
 
-  if (document.getElementById("theme-toggle-btn")) {
+  if (document.getElementById("viewing-protocol-select")) {
     return;
   }
 
-  const toggleBtn = document.createElement("button");
-  toggleBtn.id = "theme-toggle-btn";
-  toggleBtn.type = "button";
-  toggleBtn.className = "theme-toggle";
-  toggleBtn.setAttribute("aria-label", "Toggle industrial light mode");
+  const modeControl = document.createElement("div");
+  modeControl.className = "theme-control";
 
-  toggleBtn.addEventListener("click", function () {
-    const isIndustrial = document.body.classList.contains("industrial-mode");
-    const nextMode = isIndustrial ? "classic" : "industrial";
+  const modeLabel = document.createElement("label");
+  modeLabel.className = "theme-control-label";
+  modeLabel.setAttribute("for", "viewing-protocol-select");
+  modeLabel.textContent = "Viewing Protocol";
+
+  const modeSelect = document.createElement("select");
+  modeSelect.id = "viewing-protocol-select";
+  modeSelect.className = "theme-control-select";
+  modeSelect.setAttribute("aria-label", "Choose viewing protocol");
+
+  modeSelect.innerHTML = `
+    <option value="classic">Nocturne Archive</option>
+    <option value="industrial">Standard Archive</option>
+  `;
+
+  modeSelect.addEventListener("change", function () {
+    const nextMode = modeSelect.value === "industrial" ? "industrial" : "classic";
     window.localStorage.setItem(THEME_KEY, nextMode);
     setThemeMode(nextMode);
   });
 
-  document.body.appendChild(toggleBtn);
+  modeControl.appendChild(modeLabel);
+  modeControl.appendChild(modeSelect);
+  const header = document.querySelector("header");
+  (header || document.body).appendChild(modeControl);
   setThemeMode(document.body.classList.contains("industrial-mode") ? "industrial" : "classic");
 }
 
