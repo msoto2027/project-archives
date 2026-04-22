@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 body {
   margin: 0;
   font-family: 'Georgia', serif;
@@ -29,6 +44,7 @@ body {
     );
   color: #c8c0d2;
   text-align: center;
+  overflow-x: hidden;
 }
 
 /* Dust & age overlay — vignette + faint warm grain film */
@@ -135,7 +151,7 @@ h3 {
   position: fixed;
   top: 0;
   right: 0;
-  width: 250px;
+  width: min(250px, 82vw);
   height: 100vh;
   background: #120f1c;
   display: flex;
@@ -257,6 +273,7 @@ h3 {
 
 .shelf {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: flex-end;
   gap: 12px;
@@ -454,7 +471,7 @@ h3 {
   color: #3a2611;
   margin: 5vh auto;
   padding: 28px 36px;
-  width: 60%;
+  width: min(60%, 980px);
   max-width: 980px;
   max-height: 85vh;
   overflow-y: auto;
@@ -632,7 +649,7 @@ h3 {
 }
 
 .photo-gallery img {
-  width: 220px;
+  width: min(220px, 100%);
   height: auto;
   object-fit: unset;
   border-radius: 10px;
@@ -752,6 +769,7 @@ h3 {
   color: #e7e0f1;
   font-family: 'Cinzel', serif;
   letter-spacing: 1px;
+  overflow-wrap: anywhere;
 }
 
 .contact-link {
@@ -783,9 +801,141 @@ h3 {
 }
 
 @media (max-width: 640px) {
+  header {
+    padding: 18px 16px 20px;
+  }
+
+  .hamburger-container {
+    top: 16px;
+    right: 16px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    padding-right: 52px;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    line-height: 1.25;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 260px;
+    margin-top: 12px;
+    padding: 12px 18px;
+  }
+
+  .bookshelf {
+    margin: 24px 12px;
+    padding: 18px 12px;
+    border-width: 6px;
+  }
+
+  .shelf {
+    gap: 10px;
+    margin: 22px 0;
+    padding: 38px 12px 16px;
+  }
+
+  .shelf::before {
+    left: 12px;
+    right: 12px;
+  }
+
+  .book {
+    width: 52px;
+    height: 220px;
+  }
+
+  .book span {
+    font-size: 11px;
+  }
+
+  .modal-content {
+    width: calc(100% - 24px);
+    margin: 16px auto;
+    padding: 22px 18px;
+    max-height: calc(100vh - 32px);
+    border-radius: 20px;
+    transform: none;
+  }
+
+  .modal-content::before,
+  .modal-content::after {
+    display: none;
+  }
+
+  .page,
+  .portfolio-intro,
+  .homepage-tutorial,
+  .contact-form {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .page,
+  .portfolio-intro,
+  .homepage-tutorial {
+    padding: 24px 18px;
+  }
+
+  .portfolio-intro {
+    margin-top: 24px;
+  }
+
+  .intro-content p,
+  .page p,
+  .experience ul {
+    line-height: 1.7;
+  }
+
+  .photo-gallery {
+    gap: 12px;
+  }
+
+  .photo-gallery img {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .contact-form {
+    padding: 18px;
+  }
+
   .contact-link {
     margin-left: 0;
     margin-top: 6px;
+  }
+}
+
+@media (max-width: 420px) {
+  .book {
+    width: 46px;
+    height: 200px;
+  }
+
+  .book span {
+    font-size: 10px;
+  }
+
+  .page,
+  .portfolio-intro,
+  .homepage-tutorial {
+    padding: 20px 14px;
+  }
+
+  .contact-form {
+    padding: 16px;
   }
 }
 
@@ -823,4 +973,16 @@ h3 {
 
 .experience ul li {
   margin-bottom: 4px;
+}
+
+@media (max-width: 640px) {
+  .experience {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  .experience {
+    padding: 16px;
+  }
 }
