@@ -610,7 +610,7 @@ body.modal-open {
 .archive-pages {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   background:
     linear-gradient(90deg, rgba(120,88,44,0.08) 47%, rgba(82,56,27,0.2) 49.4%, rgba(82,56,27,0.2) 50.6%, rgba(120,88,44,0.08) 53%),
     radial-gradient(120% 110% at 25% 0%, rgba(255,255,255,0.24) 0%, rgba(255,255,255,0) 58%),
@@ -625,27 +625,19 @@ body.modal-open {
     inset 0 -18px 26px rgba(80,52,20,0.15),
     0 28px 60px rgba(0,0,0,0.4);
   overflow: hidden;
+  min-height: min(76vh, 640px);
 }
 
 .archive-pages::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 26px;
-  transform: translateX(-50%);
-  background:
-    linear-gradient(90deg, rgba(73,46,18,0.08), rgba(73,46,18,0.24), rgba(255,255,255,0.12), rgba(73,46,18,0.24), rgba(73,46,18,0.08));
-  box-shadow: inset 0 0 12px rgba(64,36,10,0.18);
-  pointer-events: none;
+  content: none;
 }
 
 .archive-page {
   position: relative;
   padding: 34px 34px 30px;
-  max-height: min(76vh, 640px);
-  overflow-y: auto;
+  min-height: min(76vh, 640px);
+  overflow: hidden;
+  backface-visibility: hidden;
 }
 
 .archive-page::after {
@@ -656,11 +648,7 @@ body.modal-open {
   color: rgba(83,57,27,0.72);
 }
 
-.archive-page-left::after {
-  left: 34px;
-}
-
-.archive-page-right::after {
+.archive-page-single::after {
   right: 34px;
 }
 
@@ -691,6 +679,99 @@ body.modal-open {
 
 .archive-page .photo-gallery img {
   width: min(100%, 260px);
+}
+
+.archive-page-turn {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.04), rgba(214,189,142,0.82) 28%, rgba(241,226,195,0.98) 72%, rgba(132,96,47,0.22));
+  box-shadow: 0 0 24px rgba(78,53,21,0.18);
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: right center;
+}
+
+.archive-book.turn-next .archive-page-turn {
+  opacity: 1;
+  animation: archiveTurnNext 0.45s ease;
+}
+
+.archive-book.turn-prev .archive-page-turn {
+  opacity: 1;
+  transform-origin: left center;
+  animation: archiveTurnPrev 0.45s ease;
+}
+
+.archive-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 8px 0;
+}
+
+.archive-progress {
+  margin: 0;
+  color: #dccb9e;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.08rem;
+  text-align: center;
+}
+
+.archive-nav {
+  min-width: 150px;
+  padding: 11px 16px;
+  border: 1px solid rgba(214,175,73,0.6);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(44,29,13,0.96), rgba(21,12,6,0.94));
+  color: #f2dfb0;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.06rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+}
+
+.archive-nav:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: linear-gradient(180deg, rgba(60,40,18,0.98), rgba(31,18,9,0.95));
+}
+
+.archive-nav:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+@keyframes archiveTurnNext {
+  0% {
+    transform: perspective(1200px) rotateY(0deg);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: perspective(1200px) rotateY(-118deg);
+    opacity: 0;
+  }
+}
+
+@keyframes archiveTurnPrev {
+  0% {
+    transform: perspective(1200px) rotateY(118deg);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: perspective(1200px) rotateY(0deg);
+    opacity: 0;
+  }
 }
 
 .close {
@@ -1066,6 +1147,7 @@ body.modal-open {
   .archive-pages {
     grid-template-columns: 1fr;
     border-radius: 10px 10px 22px 22px;
+    min-height: auto;
   }
 
   .archive-pages::before {
@@ -1073,19 +1155,24 @@ body.modal-open {
   }
 
   .archive-page {
-    max-height: none;
+    min-height: auto;
     padding: 26px 18px 28px;
   }
 
-  .archive-page-left {
-    border-bottom: 1px solid rgba(93,61,25,0.16);
+  .archive-page-turn {
+    display: none;
   }
 
-  .archive-page-left::after {
-    left: 18px;
+  .archive-controls {
+    flex-direction: column;
+    padding-top: 14px;
   }
 
-  .archive-page-right::after {
+  .archive-nav {
+    width: 100%;
+  }
+
+  .archive-page-single::after {
     right: 18px;
   }
 
