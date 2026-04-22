@@ -47,6 +47,166 @@ body {
   overflow-x: hidden;
 }
 
+.theme-toggle {
+  position: fixed;
+  left: 16px;
+  top: 16px;
+  z-index: 1001;
+  border: 1px solid #d4af37;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #1d1728 0%, #0f0b17 100%);
+  color: #f4dfaa;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.07rem;
+  padding: 10px 14px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(180deg, #2a213a 0%, #171022 100%);
+}
+
+body.industrial-mode {
+  background: #e8ecef;
+  background-image:
+    repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(90,107,117,0.05) 3px, rgba(90,107,117,0.05) 6px),
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(121,133,141,0.05) 3px, rgba(121,133,141,0.05) 6px);
+  color: #2a3740;
+}
+
+body.industrial-mode #dust-overlay {
+  opacity: 0.2;
+}
+
+body.industrial-mode header {
+  background: linear-gradient(180deg, #cad2d8 0%, #bcc6ce 100%);
+  border-bottom: 2px solid #7a8a95;
+  filter: none;
+}
+
+body.industrial-mode h1,
+body.industrial-mode h2,
+body.industrial-mode h3 {
+  color: #2f424d;
+  text-shadow: none;
+}
+
+body.industrial-mode .back-button,
+body.industrial-mode .archive-nav,
+body.industrial-mode .contact-form button,
+body.industrial-mode .nav a {
+  background: linear-gradient(180deg, #6f818c 0%, #4f606a 100%);
+  border-color: #3d4d56;
+  color: #f3f8fb;
+  box-shadow: 0 4px 12px rgba(58,73,82,0.28);
+}
+
+body.industrial-mode .side-menu {
+  background: #e0e7ec;
+  filter: none;
+}
+
+body.industrial-mode .side-menu a {
+  background: #c9d3da;
+  color: #233139;
+  border-left-color: #516673;
+}
+
+body.industrial-mode .side-menu a:hover {
+  background: #b9c6cf;
+  box-shadow: inset -3px 0 5px rgba(81,102,115,0.2);
+}
+
+body.industrial-mode .bookshelf {
+  background: linear-gradient(90deg, #8e979d 0%, #a7b0b6 18%, #b7bfc5 50%, #a7b0b6 82%, #8e979d 100%);
+  border-color: #5e6e78;
+  filter: none;
+}
+
+body.industrial-mode .shelf {
+  background: linear-gradient(to right, #7c8a94 0%, #97a5af 50%, #7c8a94 100%);
+}
+
+body.industrial-mode .book {
+  filter: saturate(0.45) sepia(0.06) brightness(1);
+}
+
+body.industrial-mode .portfolio-intro,
+body.industrial-mode .homepage-tutorial,
+body.industrial-mode .contact-form,
+body.industrial-mode .experience {
+  background: #d5dde3;
+  border-color: #73828c;
+  box-shadow: 0 8px 18px rgba(75,90,99,0.18);
+}
+
+body.industrial-mode .intro-content p,
+body.industrial-mode .page p,
+body.industrial-mode .experience p,
+body.industrial-mode .experience ul,
+body.industrial-mode .contact-links p,
+body.industrial-mode .form-status {
+  color: #2b3a43;
+}
+
+body.industrial-mode .page h3,
+body.industrial-mode .contact-form label,
+body.industrial-mode .inquiry-options legend,
+body.industrial-mode .archive-progress,
+body.industrial-mode .archive-kicker {
+  color: #31434e;
+}
+
+body.industrial-mode .contact-form input,
+body.industrial-mode .contact-form textarea {
+  background: #edf2f5;
+  color: #24343d;
+  border-color: #8b99a3;
+}
+
+body.industrial-mode .contact-link {
+  background: rgba(198,209,217,0.6);
+  color: #223640;
+  border-color: #71828d;
+  box-shadow: inset 0 -2px 0 rgba(81,102,115,0.24);
+}
+
+body.industrial-mode .archive-pages {
+  background:
+    radial-gradient(120% 110% at 25% 0%, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0) 60%),
+    radial-gradient(120% 110% at 75% 0%, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 58%),
+    linear-gradient(180deg, #f0f4f7 0%, #e5ebef 100%);
+  border-color: #8b99a3;
+  color: #26343d;
+}
+
+body.industrial-mode .archive-page h2,
+body.industrial-mode .archive-page h3,
+body.industrial-mode .archive-page p,
+body.industrial-mode .archive-page li,
+body.industrial-mode .archive-page::after {
+  color: #2a3b44;
+}
+
+body.industrial-mode .archive-page a {
+  color: #2d556b;
+}
+
+body.industrial-mode .close {
+  background: rgba(59,74,83,0.78);
+  color: #f3f7fa;
+}
+
+body.industrial-mode .theme-toggle {
+  background: linear-gradient(180deg, #dde6eb 0%, #cbd5dc 100%);
+  border-color: #5f727f;
+  color: #25343c;
+}
+
 /* Dust & age overlay — vignette + faint warm grain film */
 #dust-overlay {
   position: fixed;
@@ -860,7 +1020,11 @@ body.modal-open {
   border-left: 4px solid #8e7220;
   margin-top: 20px;
   font-style: italic;
-  color: #a8999e;
+  color: #d8cfe6;
+}
+
+.intro-tip em {
+  color: #eee7f8;
 }
 
 .homepage-tutorial {
@@ -1059,6 +1223,13 @@ body.modal-open {
 }
 
 @media (max-width: 640px) {
+  .theme-toggle {
+    left: 12px;
+    top: 12px;
+    font-size: 0.72rem;
+    padding: 9px 12px;
+  }
+
   header {
     padding: 18px 16px 20px;
   }

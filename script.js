@@ -17,6 +17,44 @@ function closeMenu() {
   sideMenu.classList.remove("active");
 }
 
+const THEME_KEY = "projectArchivesTheme";
+
+function setThemeMode(mode) {
+  const isIndustrial = mode === "industrial";
+  document.body.classList.toggle("industrial-mode", isIndustrial);
+
+  const toggleBtn = document.getElementById("theme-toggle-btn");
+  if (toggleBtn) {
+    toggleBtn.textContent = isIndustrial ? "Classic Archive" : "Industrial Light";
+    toggleBtn.setAttribute("aria-pressed", String(isIndustrial));
+  }
+}
+
+function initThemeToggle() {
+  const savedMode = window.localStorage.getItem(THEME_KEY);
+  setThemeMode(savedMode === "industrial" ? "industrial" : "classic");
+
+  if (document.getElementById("theme-toggle-btn")) {
+    return;
+  }
+
+  const toggleBtn = document.createElement("button");
+  toggleBtn.id = "theme-toggle-btn";
+  toggleBtn.type = "button";
+  toggleBtn.className = "theme-toggle";
+  toggleBtn.setAttribute("aria-label", "Toggle industrial light mode");
+
+  toggleBtn.addEventListener("click", function () {
+    const isIndustrial = document.body.classList.contains("industrial-mode");
+    const nextMode = isIndustrial ? "classic" : "industrial";
+    window.localStorage.setItem(THEME_KEY, nextMode);
+    setThemeMode(nextMode);
+  });
+
+  document.body.appendChild(toggleBtn);
+  setThemeMode(document.body.classList.contains("industrial-mode") ? "industrial" : "classic");
+}
+
 const projectDetails = {
   p1: {
     coverTitle: "SceneIt",
@@ -230,6 +268,7 @@ function flipArchivePage(direction) {
 
 document.addEventListener("DOMContentLoaded", function() {
   injectDustOverlay();
+  initThemeToggle();
 
   const hamburger = document.querySelector(".hamburger-container");
   const menuLinks = document.querySelectorAll(".side-menu a");
