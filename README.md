@@ -18,3 +18,6 @@ Additionally, it serves as a demonstration of front-end development skills, desi
 
 ## Live Project
 **[Visit My Project Archives](https://msoto2027.github.io/project-archives/)**
+
+## Changes from Project 01 to Project 02
+From Project 01 to Project 02, I focused on refining and clarifying the content based on the peer reviews I received. I updated the wording throughout the site to improve readability and ensure the information felt more polished and finalized. I also revised several titles to make them clearer and more engaging for users. In addition, I introduced a subheading to better communicate the purpose of the website, helping visitors quickly understand what the site is about. These changes were made to enhance overall clarity, professionalism, and overall user experience.
