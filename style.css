@@ -1170,6 +1170,18 @@ body.modal-open {
   margin: 15px 0;
 }
 
+.intro-content ul {
+  display: inline-block;
+  text-align: left;
+  list-style-position: inside;
+  padding-left: 0;
+  margin: 8px 0 12px;
+}
+
+.intro-content li {
+  margin: 4px 0;
+}
+
 .intro-tip {
   background: #110e1a;
   padding: 15px;
