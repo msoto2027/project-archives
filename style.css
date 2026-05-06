@@ -922,6 +922,82 @@ body.modal-open {
   width: min(100%, 260px);
 }
 
+.how-i-work-page {
+  max-width: 62ch;
+}
+
+.how-i-work-kicker {
+  margin: 0 0 8px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.74rem;
+  letter-spacing: 0.16rem;
+  text-transform: uppercase;
+  color: #8c5d1d;
+}
+
+.how-i-work-page h2 {
+  margin-bottom: 14px;
+  font-size: clamp(1.85rem, 2.6vw, 2.35rem);
+  line-height: 1.08;
+}
+
+.how-i-work-step h3,
+.how-i-work-values h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: clamp(1.1rem, 2vw, 1.42rem);
+  letter-spacing: 0.08rem;
+}
+
+.how-i-work-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: linear-gradient(145deg, #84510d 0%, #b2761c 100%);
+  color: #fdf2d8;
+  font-family: 'Cinzel', serif;
+  font-size: 0.96rem;
+  box-shadow: 0 4px 10px rgba(80,46,10,0.25);
+}
+
+.how-i-work-page p {
+  margin: 0;
+  font-size: 1.04rem;
+  line-height: 1.78;
+}
+
+.how-i-work-intro p,
+.how-i-work-values p {
+  font-size: 1.08rem;
+}
+
+@media (max-width: 640px) {
+  .how-i-work-page {
+    max-width: none;
+  }
+
+  .how-i-work-step h3,
+  .how-i-work-values h3 {
+    gap: 8px;
+    letter-spacing: 0.05rem;
+  }
+
+  .how-i-work-number {
+    width: 24px;
+    height: 24px;
+    font-size: 0.84rem;
+  }
+
+  .how-i-work-page p {
+    font-size: 1rem;
+  }
+}
+
 .archive-page-turn {
   position: absolute;
   inset: 0;
