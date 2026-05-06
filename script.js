@@ -80,12 +80,18 @@ const projectDetails = {
       `
         <h3>Process</h3>
         <p>I planned the experience around key user tasks: browse, search, save, and review. I created wireframes and interface flows in Figma, then refined layouts to improve clarity, visual hierarchy, and navigation between Home, Search, Lists, and Profile.</p>
+        <div class='photo-gallery'>
+          <img src='images/Bottom tab.png' alt='SceneIt bottom tab navigation screenshot'>
+        </div>
       `,
       `
         <h3>Final Result</h3>
         <p>The final prototype delivers a movie-tracking experience with a recommendation-focused dashboard, searchable titles, detail pages, and custom collection tools such as Favorites and Watch Later.</p>
-        <p>Prototype: <a href='https://www.figma.com/design/5Ufsw5oWSDm5hlgJABAvjv/Marisol-Soto--SceneIt--Project-03?node-id=1-2&t=ivYGXXoVn4Ine4Hj-1' target='_blank' rel='noopener noreferrer'>SceneIt Figma Prototype</a>.</p>
-        <div class='photo-gallery'><img src='images/SceneIt SC.png' alt='SceneIt prototype screenshot'></div>
+        <p>Design file: <a href='https://www.figma.com/design/5Ufsw5oWSDm5hlgJABAvjv/Marisol-Soto--SceneIt--Project-03?node-id=1-2&t=ivYGXXoVn4Ine4Hj-1' target='_blank' rel='noopener noreferrer'>SceneIt Interface Walkthrough</a>.</p>
+        <div class='photo-gallery'>
+          <img src='images/SceneIt SC.png' alt='SceneIt prototype screenshot'>
+          <img src='images/SceneIt Movie Page.png' alt='SceneIt movie page screenshot'>
+        </div>
       `,
       `
         <h3>Reflection</h3>
@@ -158,6 +164,9 @@ const projectDetails = {
         <h3>Final Result</h3>
         <p>The final site presents the bookstore as a professional and welcoming space, with clear content sections for store information, offerings, and engagement. It functions as both a marketing and informational platform.</p>
         <p>Live site: <a href='https://msoto2027.github.io/the-hidden-chapter/' target='_blank' rel='noopener noreferrer'>The Hidden Chapter Website</a>.</p>
+        <div class='photo-gallery'>
+          <img src='images/The Hidden Chapter.png' alt='The Hidden Chapter website screenshot'>
+        </div>
       `,
       `
         <h3>Reflection</h3>
@@ -176,11 +185,15 @@ const projectDetails = {
       `
         <h3>Process</h3>
         <p>I designed the guide as a prototype centered on information architecture and decision support. I mapped the experience by park, grouped recommendations into digestible sections, and prioritized clarity so users can quickly build practical itineraries.</p>
+        <p>Project PDF: <a href='images/Project 01.pdf' target='_blank' rel='noopener noreferrer'>Open Disney World Guide (PDF)</a>.</p>
       `,
       `
         <h3>Final Result</h3>
         <p>The final prototype delivers a planning-focused guide that helps users compare park priorities, identify must-do experiences, and plan with greater confidence.</p>
-        <p>Prototype: <a href='https://synthesisproductdwguide.my.canva.site/' target='_blank' rel='noopener noreferrer'>Disney World Guide Prototype</a>.</p>
+        <p>Guide preview: <a href='https://synthesisproductdwguide.my.canva.site/' target='_blank' rel='noopener noreferrer'>Disney Trip Planning Experience</a>.</p>
+        <div class='photo-gallery'>
+          <img src='images/Disney World Guide EX.png' alt='Disney World Guide example screenshot'>
+        </div>
       `,
       `
         <h3>Reflection</h3>
@@ -262,7 +275,10 @@ const projectDetails = {
       `
         <h3>Final Result</h3>
         <p>Itinera is an active build with core functionality centered on unified trip planning. The project direction is to provide a single, reliable tool for end-to-end travel preparation.</p>
-        <p>Project link: <a href='https://github.com/msoto2027/itinera' target='_blank' rel='noopener noreferrer'>Itinera on GitHub</a></p>
+        <p>Project link: <a href='https://github.com/msoto2027/itinera' target='_blank' rel='noopener noreferrer'>Itinera Project Hub</a></p>
+        <div class='photo-gallery'>
+          <img src='images/Itinera Home Page.png' alt='Itinera home page screenshot'>
+        </div>
       `,
       `
         <h3>Reflection</h3>
